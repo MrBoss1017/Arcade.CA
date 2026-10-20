@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080c18">
+  <meta name="description" content="Five free Canadian arcade games. Flap, collect, sort, catch and match. Play offline with a keyboard, mouse or touch.">
+  <title>Maple Arcade — Play it Canadian.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><symbol id="maple" viewBox="0 0 64 64"><path d="M30 57l1-15-14 3 3-7L7 27l8-2-1-10 11 7-1-12 6 4 4-12 5 12 6-4-2 14 10-7-1 10 7 2-14 11 3 6-14-3 1 14z"/></symbol></defs></svg>
+  <a class="skip-link" href="#main">Skip to games</a>
+  <header class="site-header">
+    <a href="#games" class="brand" aria-label="Maple Arcade home"><svg aria-hidden="true"><use href="#maple"/></svg><span>MAPLE<span class="brand-light"> ARCADE</span></span></a>
+    <span class="header-note"><i></i> NO QUARTERS REQUIRED</span>
+    <button class="sound-button" id="sound-toggle" type="button" aria-pressed="false" title="Toggle sound (M)"><span aria-hidden="true" id="sound-icon">♪</span><span id="sound-label">Sound off</span></button>
+  </header>
+  <main id="main">
+    <section id="lobby" aria-labelledby="hero-title">
+      <div class="hero">
+        <div class="eyebrow"><span></span> FROM COAST TO HIGH SCORE <span></span></div>
+        <h1 id="hero-title"><span>THE GREAT CANADIAN</span><strong>ARCADE<span class="title-leaf" aria-hidden="true"><svg><use href="#maple"/></svg></span></strong></h1>
+        <p>Five classics. A little maple. A lot of <em>“one more go.”</em></p>
+        <div class="hero-rule" aria-hidden="true"></div>
+      </div>
+      <div class="selection-heading"><h2>Select your game</h2><span>05 GAMES <b> / </b> ALL PLAYABLE</span></div>
+      <div class="game-grid" id="game-grid"></div>
+      <div class="lobby-bottom"><span><span class="small-leaf" aria-hidden="true">✦</span> BIG CANADIAN ENERGY. LITTLE PIXEL GAMES.</span><span>Keyboard, mouse &amp; touch</span></div>
+    </section>
+    <section id="game-view" hidden aria-labelledby="game-title">
+      <div class="game-topline"><button id="back-button" class="text-button" type="button">← All games</button><span id="game-genre" class="game-genre"></span></div>
+      <div class="game-heading"><div><p class="eyebrow" id="game-number"></p><h1 id="game-title"></h1></div><div class="scoreboard"><div><span id="score-label">SCORE</span><strong id="score">0</strong></div><div><span>PERSONAL BEST</span><strong id="best-score">0</strong></div></div></div>
+      <div class="cabinet" id="cabinet">
+        <div class="cabinet-bar"><span id="run-status">Ready when you are.</span><div><button id="pause-button" type="button" disabled title="Pause or resume (P / Escape)">Pause</button><button id="restart-button" type="button" title="Restart (R)">Restart ↻</button><button id="fullscreen-button" type="button" title="Toggle fullscreen" aria-label="Toggle fullscreen"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9V3h6m6 0h6v6M3 15v6h6m6 0h6v-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div></div>
+        <div class="stage" id="stage">
+          <canvas id="game-canvas" width="960" height="600" tabindex="0" aria-label="Game play area. Instructions are below."></canvas>
+          <div id="memory-panel" class="memory-panel" hidden><div class="memory-grid" id="memory-grid" aria-label="Canadian matching cards"></div><p id="memory-note">Find the matching Canadian icons.</p></div>
+          <div id="game-overlay" class="game-overlay"><div class="overlay-card"><p class="eyebrow" id="overlay-kicker">LET’S PLAY</p><h2 id="overlay-title"></h2><p id="overlay-description"></p><div id="overlay-controls" class="overlay-controls"></div><button id="start-button" class="primary-button" type="button">Start game <span aria-hidden="true">→</span></button><p class="overlay-foot" id="overlay-foot"></p></div></div>
+        </div>
+        <div class="game-controls" id="game-controls"></div>
+      </div>
+      <div class="under-game"><p id="game-tip"></p><span><kbd>P</kbd> Pause <kbd>R</kbd> Restart <kbd>M</kbd> Sound</span></div>
+    </section>
+  </main>
+  <footer><span><svg aria-hidden="true"><use href="#maple"/></svg> Play it Canadian.</span><span>An independent arcade. No government affiliation.</span></footer>
+  <div class="floor-grid" aria-hidden="true"></div>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">Please enable JavaScript to play these five games. No internet connection is required.</div></noscript>
+</body>
+</html>
